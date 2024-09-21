@@ -102,6 +102,7 @@ __Decoder__(IC-74139)
 
 
 **full adder using 3:8 decoder** 
+
 ![image](https://github.com/user-attachments/assets/4b34223a-ad20-4065-bf07-bce85f338419)
 
 
@@ -111,8 +112,44 @@ __Encoder__(IC - 74147)
 
 * encoders produce series of MAXTERM (ORed out)
 * ACTIVE HIGH outputs
-* **Priority encoders are used to differentiate, when all the i/p lines are 0 and when x0 is 0 (as it produces same output)**
-* 
+* **Priority encoders are used to differentiate, when all the i/p lines are 0 and when D0 is 0 (as it produces same output)**
+
+## FlIP FLOPS (CLK i/p)
+
+* SR (Set-Reset) Flip-Flop: A simple flip-flop with two inputs (Set and Reset) and one output (Q). It can be set to 1 or reset to 0.
+* D (Data) Flip-Flop: A clocked flip-flop that stores the data present at the D input **(stores data based on clock pulse)** when the clock signal rises or falls.
+* JK Flip-Flop: A clocked flip-flop with two inputs (J and K) and one output (Q). It can be set, reset, or toggle **(when set and reset are triggered at the same time)** its output depending   on the input values and clock signal.
+* T (Toggle) Flip-Flop: A clocked flip-flop that toggles its output (changes to the opposite state) on each rising or falling edge of the clock signal.
+  
+Applications of Flip-Flops:
+* Registers: Flip-flops are used to create registers, which are groups of flip-flops used to store data.**(D type flip flops are used)**
+* Counters: Counters are digital circuits that count events or measure time. They often use flip-flops as their basic building blocks.**(JK flip flops are used)**
+
+  __SR Latch:__
+
+* Asynchronous: An SR latch does not have a clock input. It changes state immediately in response to changes on the S (Set) and R (Reset) inputs.
+* Unstable States: If both S and R inputs are high at the same time, the output becomes undefined or unstable. This is known as a "forbidden state."
+  SR Flip-Flop:
+
+![image](https://github.com/user-attachments/assets/595fc501-1760-440c-9ba2-81e839433f04)
+
+Disadvatges: The flip flop enters forbidden state if both S & R are high -> This is overcomed by using D and JK flip flop
+
+__JK FLIP FLOP__
+
+* The output changes on the rising and falling edge of the clock pulse
+
+  ![image](https://github.com/user-attachments/assets/f62c4574-1388-4d1c-822e-8f2ea05c12fd)
+
+From the TT 
+* if JK is 0 0 = prev state
+* 0 1 = Reset
+* 1 0 = Set
+* 1 1 = Toggle previous state (which was not defined for SR latch)
+
+  ![image](https://github.com/user-attachments/assets/7177208f-4c2e-48ee-89d0-d1f5484ff230)
+
+Con: TRACE AROUND CONDITION- When J&K are 1 1 and clk is HIGH, the prev state of the output is unknown in order to toggle.
 
 
 
