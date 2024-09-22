@@ -191,6 +191,7 @@ Registers are combination of multiple flip flops to store multipe BITS
 
  Microprocessors: Registers are used to store instructions, data, and addresses.
 
+4 bit registers
 
  ![image](https://github.com/user-attachments/assets/43050c1f-4a7c-41c6-a210-cecb85c4a04b)
 
