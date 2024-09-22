@@ -149,7 +149,100 @@ From the TT
 
   ![image](https://github.com/user-attachments/assets/7177208f-4c2e-48ee-89d0-d1f5484ff230)
 
-Con: TRACE AROUND CONDITION- When J&K are 1 1 and clk is HIGH, the prev state of the output is unknown in order to toggle.
+* Con: TRACE AROUND CONDITION- When J&K are 1 1 and clk is HIGH, the prev state of the output is unknown in order to toggle.
+
+Race around condition: A condition of MULTIPLE 0's and 1's in a single RISING EDGE period 
+
+![image](https://github.com/user-attachments/assets/f080bb5f-857f-49f4-9d18-229ae901dbaa)
+
+__This is solved using JK master and Slave__
+
+![image](https://github.com/user-attachments/assets/c02f2bef-be2e-4e69-9b3d-2550dbe3a173)
+
+Here in the pos edge of clk the master output is transferred and in the neg edge the slave output is transfeered. Hence at one change in the CLK only once the output is changed.
+
+OUTPUT WAVEFORM:
+
+![image](https://github.com/user-attachments/assets/c511d979-145f-4915-9257-122466d73493)
+
+__D/T FLIP FLOP__
+
+* A D flip-flop is a type of clocked flip-flop used in digital circuits to store a single bit of data. It has one input (D) and one output (Q)
+
+Applications of D Flip-Flops:
+
+ Registers: To store data in a sequential manner.
+
+ Shift registers: To shift data bits left or right.
+
+* A T (Toggle) flip-flop is a type of clocked flip-flop that changes its output state (Q) on each rising or falling edge of the clock signal.
+
+App: Frequency dividers: T flip-flops can be used to divide a clock frequency by a factor of 2 : In this configuration, the output of the T flip-flop is fed back to its input, creating a self-sustaining oscillation
+
+### REGISTERS AND COUNTERS
+
+Registers are combination of multiple flip flops to store multipe BITS
+* SISO (Serial IN Serial OUT)
+* SIPO
+* PIPO
+* PISO
+* Universal Shift Register : Combines the functionality of SISO, SIPO, PISO, and PIPO registers.
+* App: Shift Registers: Used for data transmission, delay, and pattern recognition
+
+ Microprocessors: Registers are used to store instructions, data, and addresses.
+
+
+ ![image](https://github.com/user-attachments/assets/43050c1f-4a7c-41c6-a210-cecb85c4a04b)
+
+__Universal Shift Register__
+
+* the circuit consists of registers and 4:1 MUX (2 select lines = 4 operations  )
+* It performs operations like
+  * NO change - 0 0
+  * right shift - 0 1
+  * left shift - 1 0
+  * parallel input (hence universal) - 1 1
+* D flip flops are used to store data
+* App: Serial communication: Used in serial communication protocols like UART and SPI.
+
+
+![image](https://github.com/user-attachments/assets/6de6d21b-9c14-4700-ba50-cdbc5cfc54e1)
+
+Ref vdo:https://youtu.be/AEGzpMlOsvc?si=07R-H7m8YizjyjjJ
+
+__COUNTERS__
+
+* Synchronous- Clk pulse is given at the same time
+* Asynchronous **(RIPPLE COUNTER)**- clk is given to first FF, the output of first FF drives the second and so on.
+* Number of counts= 2^n, where n is number of FF used in counter
+  * 2^3= 8 (0 to 7) also called as MOD 8 counter.
+
+UP COUNTER:
+
+Connect Qn to the clk to clk of next FF
+
+![image](https://github.com/user-attachments/assets/2b4554ec-4b2d-4da0-bf77-5f2337a0f4b5)
+
+
+DOWN COUNTER:
+
+Connect Qn(bar) to the clk of next FF
+
+![image](https://github.com/user-attachments/assets/03033d39-0a5c-406e-b510-7af453cc6fc7)
+
+Ref Vdo: https://youtu.be/s1DSZEaCX_g?si=ECoGKPSdBgYEHPkL
+
+__3 bit UP/DOWN Counter__
+
+
+![image](https://github.com/user-attachments/assets/26c877f1-882a-4b04-9bfe-7373445afca2)
+
+The in between circuit is obtained from K-MAP of TT
+
+**NOTE : For Synchronous counter excitation table is required**
+
+
+
 
 
 
